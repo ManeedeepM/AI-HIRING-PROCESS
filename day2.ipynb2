@@ -1,0 +1,162 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ManeedeepM/AI-HIRING-PROCESS/blob/main/day2.ipynb2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 12,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "q-oYAbz6p2l4",
+        "outputId": "f96f9726-a79b-45ed-dc39-7419afe762a3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  citizen_id      complaint_type                              description  \\\n",
+            "0     CIT001     Street Lighting    Street light not working in Sector 12   \n",
+            "1     CIT002        Water Supply               No water supply for 3 days   \n",
+            "2     CIT003         Road Repair  Potholes on main road causing accidents   \n",
+            "3     CIT004  Garbage Collection         Garbage not collected for a week   \n",
+            "4     CIT005         Electricity              Frequent power cuts in area   \n",
+            "5     CIT006     Street Lighting            Multiple street lights broken   \n",
+            "6     CIT007        Water Supply             Water contamination reported   \n",
+            "7     CIT008         Road Repair    Road construction causing traffic jam   \n",
+            "8     CIT009    Public Transport                    Bus service irregular   \n",
+            "9     CIT010     Street Lighting              Dark area needs more lights   \n",
+            "\n",
+            "    timestamp       status  resolution_days  \n",
+            "0  15-01-2024     Resolved              5.0  \n",
+            "1  16-01-2024  In Progress              NaN  \n",
+            "2  17-01-2024         Open              NaN  \n",
+            "3  18-01-2024     Resolved              3.0  \n",
+            "4  19-01-2024  In Progress              NaN  \n",
+            "5  20-01-2024         Open              NaN  \n",
+            "6  21-01-2024     Resolved              7.0  \n",
+            "7  22-01-2024  In Progress              NaN  \n",
+            "8  23-01-2024         Open              NaN  \n",
+            "9  24-01-2024     Resolved              4.0  \n"
+          ]
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "df = pd.read_csv('citizen_complaints.csv') # to load csv file in dataframe using pandas\n",
+        "print(df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.isnull().sum() # to show null values of entire dataset"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 272
+        },
+        "id": "mzCcPPhh0LDg",
+        "outputId": "b8ed3ecf-dded-4c92-9ad6-546509fc0c63"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "citizen_id         0\n",
+              "complaint_type     0\n",
+              "description        0\n",
+              "timestamp          0\n",
+              "status             0\n",
+              "resolution_days    6\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>citizen_id</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>complaint_type</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>description</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>timestamp</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>status</th>\n",
+              "      <td>0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>resolution_days</th>\n",
+              "      <td>6</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 14
+        }
+      ]
+    }
+  ]
+}
